@@ -15,9 +15,3 @@ mixin header-1(url, icon, h1, navigation, hook)
 
                 button
                     svg: use(xlink:href="/assets/images/_sprites/symbols.svg#header-1-nav-button")
-
-                ul
-                    for anchor in navigation
-
-                        li
-                            a(href=anchor.href)= anchor.name
