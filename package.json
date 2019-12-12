@@ -1,5 +1,5 @@
 {
-  "name": "new-project",
+  "name": "xmas2019",
   "version": "1.0.0",
   "scripts": {
     "start": "NODE_ENV=development gulp",
@@ -17,9 +17,9 @@
   },
   "private": true,
   "license": "UNLICENSED",
-  "homepage": "http://example.com",
-  "author": "Name <you@example.com>",
-  "description": "Project description.",
+  "homepage": "https://baaij.amsterdam",
+  "author": "Joost Baaij <joost@baaij.amsterdam>",
+  "description": "An online xmas card. Deal with it..",
   "config": {
     "host": "0.0.0.0",
     "port": 3003,
