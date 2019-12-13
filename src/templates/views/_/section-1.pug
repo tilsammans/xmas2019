@@ -1,24 +1,11 @@
 section(class="canvas section-1" id="section-1")
 
-    h2 Section 1
-
     div(class="content")
 
-        div
+        figure.big-lock(style="width: 300px")
 
-            img(src="images/home/section-1/_inline/image.svg" inline)
+            img(src="images/home/section-1/_inline/locked.svg" inline)
 
-            article
-
-                h2 Vul de code in om door te gaan.
-                
-                input(maxlength="2" placeholder="•" value="" type="number" class="pin")
-                input(maxlength="2" placeholder="•" value="" type="number" class="pin")
-                input(maxlength="2" placeholder="•" value="" type="number" class="pin")
-                input(maxlength="1" placeholder="•" value="" type="number" class="pin")
-
-                p.
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis,
-                    praesentium voluptatum deleniti atque corrupti quos dolores et quas.
-
-    +nav-1("section-2")
+        article
+          
+            +form-2("Vul de code in")

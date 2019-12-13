@@ -1,0 +1,14 @@
+mixin form-2(legend = "Pin")
+  
+    form(class=hook ? "form-2 " + hook :  "form-2")
+      
+        h2= legend
+        
+        fieldset
+          
+            .pinpad
+
+                input(required min="0" max="9" maxlength="2" placeholder="•" value="" type="number" class="pin" tabindex="1")
+                input(required min="0" max="9" maxlength="2" placeholder="•" value="" type="number" class="pin" tabindex="2")
+                input(required min="0" max="9" maxlength="2" placeholder="•" value="" type="number" class="pin" tabindex="3")
+                input(required min="0" max="9" maxlength="1" placeholder="•" value="" type="number" class="pin" tabindex="4")

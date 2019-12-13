@@ -1,0 +1,44 @@
+form-2(scheme = __default)
+    .form-2
+
+        width: 600px
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+        align-content: flex-start
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button
+            -webkit-appearance: none
+            margin: 0
+
+        input.pin
+            caret-color: __neon
+            background-color: rgba(0, 0, 0, 0.2)
+            border-radius: 8px
+            border: 0
+            outline: 0
+            color: __neon
+            font-size: 3rem
+            font-weight: bold
+            width: 5rem
+            height: 6rem
+            text-align: center
+
+            & + input.pin
+              margin-left: 8px
+
+        fieldset
+            width: 100%
+            margin-bottom: rem(20px)
+            legend
+                font-size: 1.3rem
+                font-weight: 600
+                padding: rem(10px) 0
+                color: scheme.default
+
+        .pinpad
+            width: 360px
+            margin: 15px auto 60px auto
+
+        { block }
