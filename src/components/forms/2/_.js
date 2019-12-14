@@ -8,11 +8,11 @@ export default function(element) {
         const form = event.target.form;
 
         if (form.reportValidity()) {
-            const flipContainer = document.querySelector('.flip-container')
+            const flipContainer = document.querySelector('.flip-container');
 
             if (!flipContainer) return;
 
-            flipContainer.classList.add('unlocked')
+            flipContainer.classList.add('unlocked');
         } else {
             const firstInvalid = document.querySelector('input:invalid');
 

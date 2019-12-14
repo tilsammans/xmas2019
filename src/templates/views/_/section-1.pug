@@ -2,9 +2,12 @@ section(class="canvas section-1" id="section-1")
 
     div(class="content")
 
-        figure.big-lock(style="width: 300px")
-
-            img(src="images/home/section-1/_inline/locked.svg" inline)
+        .flip-container
+            .flipper
+                figure.flip-front
+                    img(src="images/home/section-1/_inline/locked.svg" inline)
+                figure.flip-back
+                    img(src="images/home/section-1/_inline/unlocked.svg" inline)
 
         article
           
