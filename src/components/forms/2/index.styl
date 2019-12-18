@@ -1,4 +1,33 @@
 form-2(scheme = __default)
+    .flip-container(ontouchstart="this.classList.toggle('hover');")
+        perspective: 1000px
+
+	  .flip-container.unlocked .flipper
+        transform: rotateY(180deg)
+
+    .flip-container, .flip-front, .flip-back
+        width: 300px
+        height: 400px
+
+    .flipper
+        transform: rotateY(0deg)
+        transition: 0.6s
+        transform-style: preserve-3d
+        position: relative
+
+    .flip-front, .flip-back
+        backface-visibility: hidden
+        position: absolute
+        top: 0
+        left: 0
+
+    .flip-front
+        z-index: 2
+        transform: rotateY(0deg)
+
+    .flip-back
+        transform: rotateY(180deg)
+
     .form-2
 
         width: 600px

@@ -9,31 +9,3 @@ fontsize = 60px
       color: __neon !important
     input:-ms-input-placeholder
       color: __neon !important
-
-    .flip-container(ontouchstart="this.classList.toggle('hover');")
-        perspective: 1000px
-
-	  .flip-container.unlocked .flipper
-        transform: rotateY(180deg)
-
-    .flip-container, .flip-front, .flip-back
-        width: 300px
-        height: 400px
-
-    .flipper
-        transition: 0.6s
-        transform-style: preserve-3d
-        position: relative
-
-    .flip-front, .flip-back
-        backface-visibility: hidden
-        position: absolute
-        top: 0
-        left: 0
-
-    .flip-front
-        z-index: 2
-        transform: rotateY(0deg)
-
-    .flip-back
-        transform: rotateY(180deg)

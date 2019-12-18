@@ -6,14 +6,15 @@ export default function(element) {
 
     function refocus(event) {
         const form = event.target.form;
+        const flipContainer = document.querySelector('.flip-container');
 
         if (form.reportValidity()) {
-            const flipContainer = document.querySelector('.flip-container');
-
             if (!flipContainer) return;
 
             flipContainer.classList.add('unlocked');
         } else {
+            flipContainer.classList.remove('unlocked');
+            
             const firstInvalid = document.querySelector('input:invalid');
 
             if (!firstInvalid) return;
