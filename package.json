@@ -69,7 +69,9 @@
     "rollup-plugin-terser": "^3.0.0"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "faunadb": "^2.10.0",
+    "fingerprintjs2": "^2.1.0",
     "netlify-lambda": "^1.6.3"
   }
 }

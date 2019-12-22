@@ -3,6 +3,7 @@
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 // DEPENDENCIES
+require('dotenv').config();
 
 // modules
 import { smooth } from 'modules/scroll';
