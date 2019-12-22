@@ -1,5 +1,6 @@
-import faunadb, { query as q } from 'faunadb';
-import Fingerprint2 from 'fingerprintjs2';
+var faunadb = require('faunadb');
+var q = faunadb.query;
+const Fingerprint2 = require('fingerprintjs2');
 
 const client = new faunadb.Client({ secret: process.env.FAUNADB_SECRET });
 
