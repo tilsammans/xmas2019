@@ -1,11 +1,16 @@
+// to use commonjs modules transparently with ES6 imports
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import builtins from 'rollup-plugin-node-builtins';
+
+// then come the usual dependencies
 import { src, dest } from 'gulp';
 import { rollup } from 'rollup';
 import babel from 'rollup-plugin-babel';
-import replace from 'rollup-plugin-replace';
+import replace from '@rollup/plugin-replace';
 import { eslint } from 'rollup-plugin-eslint';
 import { terser } from 'rollup-plugin-terser';
-import include from 'rollup-plugin-includepaths';
-import resolve from 'rollup-plugin-node-resolve';
+import includePaths from 'rollup-plugin-includepaths';
 import { app, src as source, ctx } from '..';
 
 const production = ctx.id === 'production';
@@ -15,6 +20,12 @@ const data = {
     VERSION: `'${ app.version }'`,
     AUTHOR: `'${ app.author }'`,
     DATE: `'${ app.date }'`,
+};
+
+let includePathOptions = {
+    include: {},
+    paths: [source.components, `${ source.logic }/js/`],
+    external: []
 };
 
 const preamble =
@@ -29,7 +40,13 @@ function logic() {
 
     return rollup({
         input: `${ source.logic }/js/root.js`,
+        // nodeArgs: ['--require dotenv/config'],
         plugins: [
+            resolve({
+                preferBuiltins: true
+            }),
+            commonjs(),
+            builtins(),
             eslint({
                 exclude: [
                     `${ source.fonts }/**`,
@@ -38,10 +55,7 @@ function logic() {
                     `${ source.templates }/**`,
                 ],
             }),
-            resolve(),
-            include({
-                paths: [source.components, `${ source.logic }/js/`]
-            }),
+            includePaths(includePathOptions),
             replace({
                 exclude: 'node_modules/**',
                 values: data,

@@ -1,5 +1,4 @@
-var faunadb = require('faunadb');
-var q = faunadb.query;
+import faunadb, { query as q } from "faunadb"
 
 function GetPin (code) {
   const client = new faunadb.Client({ secret: process.env.FAUNADB_SECRET })
