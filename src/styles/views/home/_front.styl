@@ -1,25 +1,3 @@
-s1 = ""
-s2 = ""
-s3 = ""
-for $i in (1..200)
-  s1 = s1 + join(' ', random-offset-x() random-offset-y() 0 random-spread() white)
-  s2 = s2 + join(' ', random-offset-x() random-offset-y() 0 random-spread() white)
-  s3 = s3 + join(' ', random-offset-x() random-offset-y() 0 random-spread() white)
-  if $i < 200
-    s1 = s1 + ", "
-    s2 = s2 + ", "
-    s3 = s3 + ", "
-@keyframes fall
-  100%
-    transform: translateY(200vh)
-@keyframes flicker
-	0%, 19.999%, 23%, 62.999%, 64%, 64.999%, 70%, 100%
-    opacity: 1
-	20%, 22.999%, 63%, 63.999%, 65%, 69.999%
-		opacity: 0.4
-
-form-2()
-
 .front
     width: 100vw
     height: 100vh
@@ -31,38 +9,8 @@ form-2()
         animation: flicker 3s linear
         text-shadow: 1px 0px 4px #FFD5FF, 2px 0px 4px #FFD5FF, 3px 0px 4px #FFD5FF, 2px 0px 3px #D42CCA, 2px 3px 15px #D42CCA, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #D42CCA,40px 0vw 200px #D42CCA
 
-    .snow
-        border-radius: 50%
-        opacity: .8
-        position: absolute
-        top: -100vh
-        animation-name: fall
-        animation-timing-function: linear
-        animation-iteration-count: infinite
-    .layer1
-        width: 1.5rem
-        height: 1.5rem
-        filter:blur(1.5px)
-        box-shadow: unquote(s1)
-        animation-duration: 60s
-    .layer1.a
-        animation-delay: -30s
-    .layer2
-        width: 1.2rem
-        height: 1.2rem
-        filter:blur(3px)
-        box-shadow: unquote(s2)
-        animation-duration: 30s
-    .layer2.a
-        animation-delay: -15s
-    .layer3
-        width: .8rem
-        height: .8rem
-        filter:blur(6px)
-        box-shadow: unquote(s3)
-        animation-duration: 40s
-    .layer3.a
-        animation-delay: -20s
+    snow()
+
     .content
         flex-flow: column wrap
         align-items: center

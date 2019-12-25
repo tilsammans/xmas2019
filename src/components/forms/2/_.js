@@ -22,8 +22,7 @@ export default function(element) {
         if (form.reportValidity()) {
             if (!flipContainer) return;
 
-            window.xmas.result = verifyPin('1234');
-
+            verifyPin();
             flipContainer.classList.add('unlocked');
         } else {
             flipContainer.classList.remove('unlocked');

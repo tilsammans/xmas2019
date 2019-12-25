@@ -5,6 +5,7 @@
     "start": "NODE_ENV=development gulp",
     "lint": "NODE_ENV=production eslint --fix src/",
     "test": "npm run lint",
+    "postinstall": "netlify-lambda install",
     "development": "NODE_ENV=development gulp",
     "production": "NODE_ENV=production gulp production",
     "preflight": "NODE_ENV=production gulp preflight",

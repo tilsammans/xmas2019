@@ -1,11 +1,18 @@
-fontsize = 60px
-
 .section-1
-    input::-webkit-input-placeholder
-      color: __neon !important
-    input:-moz-placeholder
-      color: __neon !important
-    input::-moz-placeholder  /* Firefox 19+ */
-      color: __neon !important
-    input:-ms-input-placeholder
-      color: __neon !important
+    .content
+        text-align: center
+
+    aside
+        width: 100%
+        margin: 0 auto 0 auto
+
+  @media (min-width: 700px)
+    .section-1
+        display: flex
+        flex-direction: row
+
+        aside
+            width: 30%
+
+        main
+            width: auto

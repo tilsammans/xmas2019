@@ -1,0 +1,52 @@
+random-offset-x()
+    num = random(-1000,1000)*0.1
+    return(round(unit(num, 'vw'),2))
+
+random-offset-y()
+    num = random(0,1000)*0.1
+    return(round(unit(num, 'vh'),2))
+
+random-spread()
+    num = random(0,50)*-0.01
+    return(round(unit(num, 'rem'),2))
+
+snowflakes()
+    $snow = ()
+    for $1 in 1..200
+        $snowflake = random-offset-x() random-offset-y() 0 random-spread() white
+        append($snow, join(' ', $snowflake))
+    return unquote(join(', ', $snow))
+
+snow()
+    .snow
+        border-radius: 50%
+        opacity: .8
+        position: absolute
+        top: -100vh
+        animation-name: fall
+        animation-timing-function: linear
+        animation-iteration-count: infinite
+    .layer1
+        width: 1.5rem
+        height: 1.5rem
+        filter:blur(1.5px)
+        box-shadow: snowflakes()
+        animation-duration: 60s
+    .layer1.a
+        animation-delay: -30s
+    .layer2
+        width: 1.2rem
+        height: 1.2rem
+        filter:blur(3px)
+        box-shadow: snowflakes()
+        animation-duration: 30s
+    .layer2.a
+        animation-delay: -15s
+    .layer3
+        width: .8rem
+        height: .8rem
+        filter:blur(6px)
+        box-shadow: snowflakes()
+        animation-duration: 40s
+    .layer3.a
+        animation-delay: -20s

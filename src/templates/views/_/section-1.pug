@@ -1,14 +1,14 @@
 section(class="canvas section-1" id="section-1")
 
     div(class="content")
+      
+        aside
+          .flip-container
+              .flipper
+                  figure.flip-front
+                      img(src="images/home/section-1/_inline/locked.svg" inline)
+                  figure.flip-back
+                      img(src="images/home/section-1/_inline/unlocked.svg" inline)
 
-        .flip-container
-            .flipper
-                figure.flip-front
-                    img(src="images/home/section-1/_inline/locked.svg" inline)
-                figure.flip-back
-                    img(src="images/home/section-1/_inline/unlocked.svg" inline)
-
-        article
-          
+        main
             +form-2("Vul de code in")

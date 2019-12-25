@@ -24,12 +24,3 @@ radii = 4px
 // random number between min and max
 random(a,b)
   return math(math(0, 'random')*(b - a + 1) + a, 'floor')
-random-offset-x()
-  num = random(-1000,1000)*0.1
-  return(round(unit(num, 'vw'),2))
-random-offset-y()
-  num = random(0,1000)*0.1
-  return(round(unit(num, 'vh'),2))
-random-spread()
-  num = random(0,50)*-0.01
-  return(round(unit(num, 'rem'),2))
